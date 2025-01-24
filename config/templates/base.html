@@ -1,0 +1,115 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>memorial books</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+{%include 'components/styles.html'%}
+      <!-- Tweaks for older IEs-->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout home_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="jloading.gif" alt="#" /></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         {%include 'components/header.html'%}
+
+         <!-- end header inner -->
+      </header>
+      <!-- end header -->
+      <section class="slider_section">
+         {%include 'components/header2.html'%}
+      </section>
+      <!-- about -->
+      <div class="about">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10 offset-md-1">
+                  <div class="aboutheading">
+                     <h2>About <strong class="black">Us</strong></h2>
+                     <span>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</span>
+                  </div>
+               </div>
+            </div>
+            <div class="row border">
+               <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                  <div class="about-box">
+                     <p> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                     <a href="#">Read More</a>
+                  </div>
+               </div>
+               <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+                  <div class="about-box">
+                     <figure><img src="{% static 'jabout.png'%}" alt="img" /></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- end about -->
+      <!-- Library -->
+      {%include 'components/Library.html'%}
+      <!-- end Library -->
+      <!--Books -->
+      {%include 'components/books.html'%}
+      <!-- end Books -->
+      <!-- Contact -->
+      <div class="Contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage3">
+                     <h2>Contact</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                  <form>
+                     <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                           <input class="form-control" placeholder="Name" type="Name">
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                           <input class="form-control" placeholder="Phone Number" type="Phone Number">
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                           <input class="form-control" placeholder="Email" type="Email">
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                           <textarea class="textarea" placeholder="Message">Message</textarea>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <button class="send-btn">Send</button>
+            </div>
+         </div>
+      </div>
+      <!-- end Contact -->
+      <!-- footer -->
+     {%include 'components/footer.html'%}
+      <!-- end footer -->
+      <!-- Javascript files-->
+{%include 'components/js.html'%}
+   </body>
+</html>
