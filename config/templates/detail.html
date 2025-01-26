@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<!--best selling book-->
+<section id="best-selling" class="leaf-pattern-overlay mt-5">
+	<div class="container">
+		<div class="row justify-content-center">
+			{%for book in books%}
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-6">
+						<figure class="products-thumb">
+							<img src="{{ books.images.url }}" alt="book" class="single-image">
+						</figure>
+					</div>
+					<div class="col-md-6">
+						<div class="product-entry">
+							<h2 class="section-title divider">{{ book.name }} - detail</h2>
+							<div class="products-content">
+								<div class="item-title"><h3>By {{ book.description }}</h3></div>
+								<div class="item-price">$ {{ book.price }}</div>
+							</div>
+			{%endfor%}
+						<div class="action-icons mt-3 d-flex justify-content-end">
+							<a href="{% url 'update_book' book.id %}" class="edit-icon me-2" title="Edit">
+								<i class="fas fa-pencil-alt"></i>
+							</a> &nbsp; &nbsp;
+							<a href="{% url 'delete_book' book.id %}" class="delete-icon" title="Delete">
+								<i class="fas fa-trash-alt"></i>
+							</a>
+						</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+<!--best selling book-->
+
+
+{% endblockmain %}
+

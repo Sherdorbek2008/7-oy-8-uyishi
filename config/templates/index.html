@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block main %}
+
+<!--billboard-->
+<section id="billboard">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<button class="prev slick-arrow">
+					<i class="icon icon-arrow-left"></i>
+				</button>
+				<div class="main-slider pattern-overlay">
+					{% for book in books %}
+					<div class="slider-item">
+						<div class="banner-content">
+							<h2 class="banner-title">{{ book.name }}</h2>
+							<p>{{ book.description }}</p>
+							<div class="btn-wrap">
+								<a href="{% url 'book_detail' book.id %}" class="btn btn-outline-accent btn-accent-arrow">Read More<i
+										class="icon icon-ns-arrow-right"></i></a>
+							</div>
+						</div><!--banner-content-->
+						<img src="{{ book.image.url }}" alt="banner" class="banner-image">
+					</div>
+					{% endfor %}
+				</div>
+
+				<button class="next slick-arrow">
+					<i class="icon icon-arrow-right"></i>
+				</button>
+
+			</div>
+		</div>
+	</div>
+
+</section>
+<!--billboard-->
+
+<!--books-->
+<section id="popular-books" class="bookshelf py-5 my-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="section-header align-center">
+						<div class="title">
+							<span>Some quality items</span>
+						</div>
+						<h2 class="section-title">Popular Books</h2>
+					</div>
+
+					<ul class="tabs">
+						<li class="active tab">
+							<a href="{% url 'home' %}" class="{% if not selected_genre %}active{% endif %}">Hamma Janrlar</a>
+						</li>
+						{% for genre in genres %}
+							<li class="tab">
+								<a href="{% url 'books_by_genre' genre.id %}" class="{% if selected_genre and genre.id == selected_genre.id %}active{% endif %}">
+									{{ genre.name }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+
+
+					<div class="tab-content">
+						<div id="all-genre" data-tab-content class="active">
+							<div class="row">
+								{% for book in books %}
+									<div class="col-md-3">
+										<div class="product-item">
+											<figure class="product-style">
+												<a href="{% url 'book_detail' book.id %}">
+													<img src="{{ book.image.url }}" alt="{{ book.title }}" class="product-item">
+												</a>
+											</figure>
+											<figcaption>
+												<h3>{{ book.name }}</h3>
+												 <br>
+												<div class="item-price">$ {{ book.price }}</div>
+											</figcaption>
+										</div>
+									</div>
+								{% empty %}
+									<p>Ushbu janrga mos kitoblar topilmadi!</p>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+<!--books-->
+
+{% endblock main %}
